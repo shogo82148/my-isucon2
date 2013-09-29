@@ -17,14 +17,16 @@ CREATE TABLE IF NOT EXISTS isucon2.ticket (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
   `artist_id` INT UNSIGNED NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  INDEX (`artist_id`)
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS isucon2.variation (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
   `ticket_id` INT UNSIGNED NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  INDEX (`ticket_id`)
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS isucon2.stock (
