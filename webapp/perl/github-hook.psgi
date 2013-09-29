@@ -27,7 +27,7 @@ my $app = sub {
     local $CWD = '/home/isu-user/isucon2';
     system 'git', qw!--git-dir=.git fetch!;
     system 'git', qw!--git-dir=.git checkout!, $branch;
-    system 'git', qw!--git-dir=.git reset --hard!, "origin/$branch@;
+    system 'git', qw!--git-dir=.git reset --hard!, "origin/$branch";
     system qw!sudo supervisorctl restart isu2webapp!;
 
     return $success;
